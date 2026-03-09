@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Azure Test Site</title>
+<style>
+body{
+font-family: Arial;
+background:#f4f6f8;
+text-align:center;
+padding:60px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+display:inline-block;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+border:none;
+border-radius:6px;
+background:#0078d4;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#005fa3;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>Hello Roy 👋</h1>
+<p>This website was created with ChatGPT and deployed to Azure.</p>
+
+<button onclick="sayHello()">Click Test</button>
+
+<p id="output"></p>
+</div>
+
+<script>
+function sayHello(){
+document.getElementById("output").innerHTML =
+"Success! Your Azure test site is working.";
+}
+</script>
+
+</body>
+</html>
