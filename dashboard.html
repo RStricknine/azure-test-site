@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Business Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+font-family:Arial;
+background:#f5f6fa;
+padding:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+margin-bottom:20px;
+width:500px;
+}
+
+h1{
+margin-bottom:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Roy Test Dashboard</h1>
+
+<div class="card">
+<h3>Total Customers</h3>
+<h2 id="customerCount">Loading...</h2>
+</div>
+
+<div class="card">
+<canvas id="customerChart"></canvas>
+</div>
+
+<script>
+
+async function loadDashboard(){
+
+let response = await fetch("/api/getDashboard");
+
+let data = await response.json();
+
+document.getElementById("customerCount").innerText = data.totalCustomers;
+
+new Chart(document.getElementById("customerChart"),{
+type:"bar",
+data:{
+labels:["Customers"],
+datasets:[{
+label:"Total Customers",
+data:[data.totalCustomers]
+}]
+}
+});
+
+}
+
+loadDashboard();
+
+</script>
+
+</body>
+
+</html>
