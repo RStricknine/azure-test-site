@@ -25,7 +25,7 @@ module.exports = async function (context, req) {
 
     const result = await db.request().query(`
       SELECT TOP 50 id, name, email, created_at
-      FROM Customers
+      FROM CustomersTest
       ORDER BY created_at DESC
     `);
 
