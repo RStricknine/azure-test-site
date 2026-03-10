@@ -25,7 +25,7 @@ module.exports = async function (context, req) {
 
     const totalResult = await db.request().query(`
       SELECT COUNT(*) AS totalCustomers
-      FROM Customers
+      FROM CustomersTest
     `);
 
     context.res = {
